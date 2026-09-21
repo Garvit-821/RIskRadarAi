@@ -1,0 +1,48 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#08111f;
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:25px 40px;
+background:#10253a;
+}
+
+nav button{
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#0ea5e9;
+color:white;
+cursor:pointer;
+}
+
+.container{
+padding:40px;
+}
+
+.container h2{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+#locationList{
+list-style:none;
+}
+
+#locationList li{
+background:#13263d;
+padding:18px;
+margin-bottom:15px;
+border-radius:12px;
+font-size:18px;
+}

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RiskRadar AI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-earth-asia"></i>
+
+RiskRadar
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="login.html">Login</a></li>
+
+<li><a class="register-btn" href="register.html">Register</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Predict.
+<span>Prevent.</span>
+Protect.
+</h1>
+
+<h3>
+AI-Powered Disaster Risk Prediction & Monitoring System
+</h3>
+
+<p>
+
+RiskRadar AI continuously monitors weather,
+earthquakes and disaster conditions using live APIs.
+
+It analyzes risks in real time,
+provides intelligent safety recommendations
+and helps users prepare before disasters occur.
+
+</p>
+
+<div class="hero-buttons">
+
+<button
+onclick="window.location.href='login.html'"
+class="hero-btn">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Launch Dashboard
+
+</button>
+
+<button
+onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})"
+class="secondary-btn">
+
+Learn More
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="earth-container">
+
+<img
+
+src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+
+class="earth"
+
+>
+
+</div>
+
+</div>
+
+</section>
+<section class="workflow">
+
+<h2>
+
+How RiskRadar Works
+
+</h2>
+
+<div class="workflow-container">
+
+<div class="step">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Search City</h3>
+
+<p>
+
+Choose any location
+to monitor.
+
+</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</div>
+
+<div class="step">
+
+<i class="fa-solid fa-cloud-sun"></i>
+
+<h3>Collect Live Data</h3>
+
+<p>
+
+Weather &
+Earthquake APIs.
+
+</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</div>
+
+<div class="step">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>AI Analysis</h3>
+
+<p>
+
+Generate Risk Score
+and Safety Brief.
+
+</p>
+
+</div>
+
+<div class="arrow">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</div>
+
+<div class="step">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Stay Safe</h3>
+
+<p>
+
+Receive Disaster
+Recommendations.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LIVE STATUS ================= -->
+
+<section class="status-section">
+
+<div class="status-card">
+
+<i class="fa-solid fa-cloud-bolt"></i>
+
+<h2 id="weatherTemp">28°C</h2>
+
+<p>Current Weather</p>
+
+</div>
+
+<div class="status-card">
+
+<i class="fa-solid fa-house-crack"></i>
+
+<h2 id="earthquakeCount">18</h2>
+
+<p>Earthquakes Today</p>
+
+</div>
+
+<div class="status-card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h2 id="riskScore">67</h2>
+
+<p>Risk Score</p>
+
+</div>
+
+<div class="status-card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h2>4</h2>
+
+<p>Tracked Locations</p>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="features">
+
+<h2 class="section-title">
+
+Powerful Features
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-cloud-showers-heavy"></i>
+
+<h3>Live Weather</h3>
+
+<p>
+
+Current weather conditions
+
+and severe weather alerts
+
+using OpenWeather API.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-house-crack"></i>
+
+<h3>Earthquake Tracker</h3>
+
+<p>
+
+Monitor earthquakes
+
+worldwide with USGS
+
+real-time earthquake feed.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Risk Analysis</h3>
+
+<p>
+
+AI-based risk score
+
+generated from weather
+
+and earthquake data.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-map-location-dot"></i>
+
+<h3>Interactive Map</h3>
+
+<p>
+
+Visualize disasters
+
+and nearby events
+
+on an interactive map.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Safety Brief</h3>
+
+<p>
+
+Simple AI explanations
+
+of disasters and
+
+recommended precautions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bell"></i>
+
+<h3>Instant Alerts</h3>
+
+<p>
+
+Receive weather
+
+and earthquake
+
+notifications instantly.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="emergency-kit">
+
+<h2>
+
+Emergency Preparedness
+
+</h2>
+
+<div class="kit-grid">
+
+<div>
+
+💧 Water
+
+</div>
+
+<div>
+
+🥫 Food
+
+</div>
+
+<div>
+
+🔦 Torch
+
+</div>
+
+<div>
+
+🩹 First Aid Kit
+
+</div>
+
+<div>
+
+🔋 Power Bank
+
+</div>
+
+<div>
+
+📱 Emergency Contacts
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h1>50+</h1>
+
+<p>Countries Supported</p>
+
+</div>
+
+<div class="stat">
+
+<h1>24/7</h1>
+
+<p>Real-Time Monitoring</p>
+
+</div>
+
+<div class="stat">
+
+<h1>99%</h1>
+
+<p>API Availability</p>
+
+</div>
+
+<div class="stat">
+
+<h1>100K+</h1>
+
+<p>Alerts Processed</p>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 RiskRadar AI
+
+Predict • Prevent • Protect
+
+Powered by Spring Boot | Java | MySQL | HTML | CSS | JavaScript
+
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

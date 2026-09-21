@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RiskRadar Dashboard</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+<div class="dashboard-layout">
+
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            🌍 RiskRadar AI
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="weather.html">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    Weather
+                </a>
+            </li>
+
+            <li>
+                <a href="earthquake.html">
+                    <i class="fa-solid fa-house-crack"></i>
+                    Earthquakes
+                </a>
+            </li>
+
+            <li>
+                <a href="alerts.html">
+                    <i class="fa-solid fa-bell"></i>
+                    Disaster Alerts
+                </a>
+            </li>
+
+            <li>
+                <a href="risk.html">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Risk Analysis
+                </a>
+            </li>
+
+            <li>
+                <a href="locations.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Locations
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-area">
+
+        <div class="dashboard-header">
+
+<div>
+
+<h1 id="welcomeText">
+
+🌍 Good Morning 👋
+
+</h1>
+
+<p class="dashboard-subtitle">
+
+Stay informed with real-time disaster intelligence.
+
+</p>
+
+<p id="dateTime">
+
+Loading...
+
+</p>
+
+</div>
+
+            <div class="nav-right">
+
+    <input
+    type="text"
+    id="cityInput"
+    placeholder="Search Any City">
+
+    <button id="searchBtn">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        Search
+
+    </button>
+
+</div>
+
+        </div>
+<section class="container">
+
+<div class="card weather-card"
+onclick="window.location.href='weather.html'">
+
+<i class="fa-solid fa-cloud-sun"></i>
+
+<h3>
+
+Weather
+
+<span class="live-badge">
+
+LIVE
+
+</span>
+
+</h3>
+
+<h1 id="temperature">
+
+Loading...
+
+</h1>
+
+<p id="weatherDescription">
+
+Fetching Weather...
+
+</p>
+
+</div>
+
+<div class="card earthquake-card"
+onclick="window.location.href='earthquake.html'">
+
+<i class="fa-solid fa-house-crack"></i>
+
+<h3>Earthquakes Today</h3>
+
+<h1 id="earthquakeCount">
+
+Loading...
+
+</h1>
+
+<p>
+
+Live USGS Updates
+
+</p>
+
+</div>
+
+<div class="card risk-card"
+onclick="window.location.href='risk.html'">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3>Risk Score</h3>
+
+<h1 id="riskScore">
+
+Loading...
+
+</h1>
+
+<p id="riskLevel">
+
+Calculating...
+
+</p>
+
+</div>
+
+<div class="card location-card"
+onclick="window.location.href='locations.html'">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Tracked Locations</h3>
+
+<h1 id="locationCount">
+
+0
+
+</h1>
+
+<p>
+
+Cities Searched
+
+</p>
+
+</div>
+
+</section>
+<section class="map-section">
+
+    <div class="section-header">
+
+        <h2>
+
+<i class="fa-solid fa-map-location-dot"></i>
+
+Live Disaster Map
+
+</h2>
+
+<p class="map-info">
+
+🟦 Weather
+
+&nbsp;&nbsp;
+
+🟥 Earthquakes
+
+&nbsp;&nbsp;
+
+🟨 Disaster Alerts
+
+</p>
+
+    </div>
+
+    <div id="map"></div>
+
+</section>
+
+<section class="ai-section">
+
+    <div class="ai-card">
+
+        <h2>
+
+            <i class="fa-solid fa-robot"></i>
+
+            AI Safety Brief
+
+        </h2>
+
+        <div id="aiBrief">
+
+<div class="ai-status">
+
+🟢 Current Risk :
+<strong>LOW</strong>
+
+</div>
+
+<ul>
+
+<li>
+
+✔ Safe to Travel
+
+</li>
+
+<li>
+
+✔ No Flood Warning
+
+</li>
+
+<li>
+
+✔ Weather Stable
+
+</li>
+
+<li>
+
+✔ Stay Updated
+
+</li>
+
+</ul>
+
+</div>
+
+    </div>
+
+</section>
+
+<section class="history-section">
+
+    <h2>
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        Recent Searches
+
+    </h2>
+
+    <div id="searchHistory">
+
+        <p>No cities searched yet.</p>
+
+    </div>
+
+</section>
+<footer>
+
+    <h3>🌍 RiskRadar AI</h3>
+
+    <p>
+
+        Developed by Team RiskRadar AI
+
+    </p>
+
+    <p>
+
+        Hackathon 2026
+
+    </p>
+
+</footer>
+<!-- AI CHAT BUTTON -->
+
+<div id="chatToggle">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+<!-- CHAT WINDOW -->
+
+<div id="chatBox">
+
+<div class="chat-header">
+
+🤖 RiskRadar AI Assistant
+
+<span id="closeChat">&times;</span>
+
+</div>
+
+<div id="chatMessages">
+
+<div class="bot">
+
+Hello 👋
+
+I am your RiskRadar AI Assistant.
+
+Ask me about:
+
+• Earthquake
+
+• Flood
+
+• Cyclone
+
+• Weather
+
+• Emergency Tips
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+
+type="text"
+
+id="userMessage"
+
+placeholder="Ask anything...">
+
+<button id="sendBtn">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+</main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
